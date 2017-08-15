@@ -1,9 +1,10 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:oxm="https://www.openxsl.com">
     <xsl:template match="/root" name="wurui.hotnews">
+        <xsl:param name="top">30</xsl:param>
         <!-- className 'J_OXMod' required  -->
         <div class="J_OXMod oxmod-hotnews" ox-mod="hotnews">
             <h3 class="headline">
-                <span>热评新闻 Top 20</span>
+                <span>热评新闻 Top <em class="J_topcount"><xsl:value-of select="$top"/></em></span>
                 <sub>数据来源:news.ifeng.com</sub>
             </h3>
             <table cellspacing="0" cellpadding="0" class="J_list">

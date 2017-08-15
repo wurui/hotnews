@@ -5,10 +5,12 @@ define(['mustache','oxjs'],function(Mustache,OX){
     init:function($mod){
         tpl=$('.J_tpl',$mod).html();
         $list=$('.J_list',$mod);
+        var topcount=$('.J_topcount',$mod).html()-0;
         var restNews=OX.useREST('news/59892417d7372b422cc4564b');
         restNews.get({
             filter:'title,origin_id,cmt,time,type',
-            limit:500
+            days:7,
+            limit:1000
         },function(r){
 //未登录提示
             if(r && r.length){
@@ -30,7 +32,7 @@ define(['mustache','oxjs'],function(Mustache,OX){
                 data.sort(function(a,b){
                     return a.cmt > b.cmt ?-1:1;
                 });
-                $list.html(Mustache.render(tpl,data.slice(0,20)))
+                $list.html(Mustache.render(tpl,data.slice(0,topcount)))
             }
             $('.J_time',$mod).html('数据获取时间:'+(new Date).toLocaleString())
 
