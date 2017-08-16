@@ -6,7 +6,7 @@ define(['mustache','oxjs'],function(Mustache,OX){
         tpl=$('.J_tpl',$mod).html();
         $list=$('.J_list',$mod);
         var topcount=$('.J_topcount',$mod).html()-0;
-        var restNews=OX.useREST('news/59892417d7372b422cc4564b');
+        var restNews=OX.useREST('news/74ee27f43d8cc949');
         restNews.get({
             filter:'title,origin_id,cmt,time,type',
             days:7,
