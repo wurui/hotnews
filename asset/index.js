@@ -3,8 +3,12 @@ define(['mustache','oxjs'],function(Mustache,OX){
     var href_prefix='https://www.openxsl.com/app/git/wurui/'
   return {
     init:function($mod){
+
         tpl=$('.J_tpl',$mod).html();
         $list=$('.J_list',$mod);
+
+        var imgurl=$mod.attr('data-imgurl'),
+            articleurl=$mod.attr('data-articleurl');
         var topcount=$('.J_topcount',$mod).html()-0;
         var restNews=OX.useREST('news/74ee27f43d8cc949');
         restNews.get({
@@ -19,10 +23,10 @@ define(['mustache','oxjs'],function(Mustache,OX){
                     if(n.cmt){
                         switch (n.type){
                             case 'img':
-                                n.href=href_prefix+'img?id='+n.origin_id
+                                n.href=href_prefix+imgurl+'?_id='+n._id
                                 break
                             case 'article':
-                                n.href=href_prefix+'detail?id='+n.origin_id
+                                n.href=href_prefix+articleurl+'?_id='+n._id
                             default :
                                 break
                         }

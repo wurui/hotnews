@@ -1,8 +1,10 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:oxm="https://www.openxsl.com">
     <xsl:template match="/root" name="wurui.hotnews">
         <xsl:param name="top">30</xsl:param>
+        <xsl:param name="url_img">img</xsl:param>
+        <xsl:param name="url_article">detail</xsl:param>
         <!-- className 'J_OXMod' required  -->
-        <div class="J_OXMod oxmod-hotnews" ox-mod="hotnews">
+        <div class="J_OXMod oxmod-hotnews" ox-mod="hotnews" data-imgurl="{$url_img}" data-articleurl="{$url_article}">
             <h3 class="headline">
                 <span>热评新闻 Top <em class="J_topcount"><xsl:value-of select="$top"/></em></span>
                 <sub>数据来源:news.ifeng.com</sub>
