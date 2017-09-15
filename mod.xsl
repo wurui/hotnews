@@ -6,7 +6,7 @@
         <!-- className 'J_OXMod' required  -->
         <div class="J_OXMod oxmod-hotnews" ox-mod="hotnews" data-imgurl="{$url_img}" data-articleurl="{$url_article}">
             <h3 class="headline">
-                <span>热评新闻 Top <em class="J_topcount"><xsl:value-of select="$top"/></em></span>
+                <span>热点新闻 Top <em class="J_topcount"><xsl:value-of select="$top"/></em></span>
                 <sub>数据来源:news.ifeng.com</sub>
             </h3>
             <table cellspacing="0" cellpadding="0" class="J_list">
@@ -16,7 +16,7 @@
             <script type="text/tpl" class="J_tpl"><![CDATA[
             <thead>
                 <td><big>标题</big></td>
-                <td>发布时间<br/>评论数</td>
+                <td>发布时间<br/>点击量</td>
             </thead>
             <tbody>
                 {{#.}}
