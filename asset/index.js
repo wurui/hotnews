@@ -10,7 +10,7 @@ define(['mustache','oxjs'],function(Mustache,OX){
         var imgurl=$mod.attr('data-imgurl'),
             articleurl=$mod.attr('data-articleurl');
         var topcount=$('.J_topcount',$mod).html()-0;
-        var restNews=OX.useREST('news/74ee27f43d8cc949');
+        var restNews=OX.useREST('news');
         restNews.get({
             filter:'title,origin_id,cmt,time,type',
             days:7,
